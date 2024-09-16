@@ -13,9 +13,8 @@
 
 library(dplyr)
 library(jsonlite)
-#vcdb <- read.csv("Data/vcdb.csv", header=TRUE, sep=",")
-vcdb_dbir <- read.csv("Data/vcdb_dbir.csv", header=TRUE, sep=",")
-MITRE_defend_json_urls <- read.csv("Data/MITRE_defend_json_urls.csv", header=TRUE, sep=",")
+vcdb_dbir <- read.csv("vcdb_dbir.csv", header=TRUE, sep=",")
+MITRE_defend_json_urls <- read.csv("MITRE_defend_json_urls.csv", header=TRUE, sep=",")
 #As of April 2024, MITRE D3FEND only has mappings for Enterprise ATT&CK entries
 MITRE_defend_json_urls <- MITRE_defend_json_urls[ which(MITRE_defend_json_urls$X == "Enterprise"), ]
 
@@ -24,7 +23,7 @@ MITRE_defend_json_urls <- MITRE_defend_json_urls[ which(MITRE_defend_json_urls$X
 library(rvest)
 library(purrr)
 library(httr)
-mitreAttackHtml <- read_html("Web/MITREATTACK.html")
+mitreAttackHtml <- read_html("MITREATTACK.html")
 
 #code for listing all unique classes of all nodes in a set of html
 mitreAttackHtml %>% 
